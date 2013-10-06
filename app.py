@@ -14,6 +14,7 @@ def hello():
 @app.route('/customer/new', methods=['POST'])
 def customer_new():
 	customer = request.json
+	app.logger.debug(customer)
 	s = sendgrid.Sendgrid(SENDGRID_USERNAME, SENDGRID_PASSWORD, secure=True)
 	subject = "[Dsenyo Notifications] New Wholesale Customer: {} {}".format(customer.first_name, customer.last_name)
 
