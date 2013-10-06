@@ -10,5 +10,5 @@ def hello():
 
 @app.route('/customer/new', methods=['POST'])
 def customer_new():
-    app.logger.debug(request) 
+    app.logger.error(request) 
     return 'OK'
