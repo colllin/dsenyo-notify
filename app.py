@@ -11,19 +11,19 @@ SENDGRID_PASSWORD = os.getenv('SENDGRID_PASSWORD',False)
 def hello():
 	return 'Notification app for Dsenyo.com'
 
-@app.route('/customer/new', methods=['POST'])
+@app.route('/customer/new', methods=['GET','POST'])
 def customer_new():
 	customer = request.json
-	app.logger.debug(customer)
+
 	s = sendgrid.Sendgrid(SENDGRID_USERNAME, SENDGRID_PASSWORD, secure=True)
-	subject = "[Dsenyo Notifications] New Wholesale Customer: {} {}".format(customer.first_name, customer.last_name)
+	subject = "[Dsenyo Notifications] New Wholesale Customer: {} {}".format(customer['first_name'], customer['last_name'])
 
 	body = """A new customer account was created on the wholesale store.
 
 	Name: {} {}
 	Email: {}
 	Notes: {}
-	""".format(customer.first_name, customer.last_name, customer.email, customer.note)
+	""".format(customer['first_name'], customer['last_name'], customer['email'], customer['note'])
 	# make a message object
 	message = sendgrid.Message("notifications@dsenyo.com", subject, body, None )
 	# add a recipient
