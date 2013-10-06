@@ -19,9 +19,9 @@ def customer_new():
 
 	body = """A new customer account was created on the wholesale store.
 
-Name: {} {}
-Email: {}
-Notes: {}
+	Name: {} {}
+	Email: {}
+	Notes: {}
 	""".format(customer.first_name, customer.last_name, customer.email, customer.note)
 	# make a message object
 	message = sendgrid.Message("notifications@dsenyo.com", subject, body, None )
@@ -31,7 +31,7 @@ Notes: {}
 	message.add_to("saintsjd@gmail.com", "Jon Saints")
 	# use the Web API to send your message
 	s.smtp.send(message)	
-    return 'OK'
+	return 'OK'
 
 if __name__ == '__main__':
     app.run(debug=True)
