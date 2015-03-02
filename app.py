@@ -31,6 +31,7 @@ def customer_new():
 	message.add_to("marissa@dsenyo.com", "Marissa Saints")
 	#message.add_to("saintsjd@gmail.com", "Jon Saints")
 	# use the Web API to send your message
+	print customer['first_name'], customer['last_name']
 	s.smtp.send(message)	
 	return 'OK'
 
