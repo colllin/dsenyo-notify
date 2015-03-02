@@ -27,7 +27,7 @@ def customer_new():
 	# make a message object
 	message = sendgrid.Message("notifications@dsenyo.com", subject, body, None )
 	# add a recipient
-	message.add_to("team@dsenyo.com", "Dsenyo Team")
+	#message.add_to("team@dsenyo.com", "Dsenyo Team")
 	message.add_to("marissa@dsenyo.com", "Marissa Saints")
 	message.add_to("amy@dsenyo.com", "Amy Travis")
 	message.add_to("linda@dsenyo.com", "Linda Xiong")
