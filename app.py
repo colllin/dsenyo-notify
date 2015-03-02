@@ -28,7 +28,7 @@ def customer_new():
 	message = sendgrid.Message("notifications@dsenyo.com", subject, body, None )
 	# add a recipient
 	message.add_to("team@dsenyo.com", "Dsenyo Team")
-	#message.add_to("marissa@dsenyo.com", "Marissa Saints")
+	message.add_to("marissa@dsenyo.com", "Marissa Saints")
 	#message.add_to("saintsjd@gmail.com", "Jon Saints")
 	# use the Web API to send your message
 	s.smtp.send(message)	
