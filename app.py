@@ -30,8 +30,8 @@ def customer_new():
 	#message.add_to("team@dsenyo.com", "Dsenyo Team")
 	message.add_to("marissa@dsenyo.com", "Marissa Saints")
 	message.add_to("amy@dsenyo.com", "Amy Travis")
-	message.add_to("linda@dsenyo.com", "Linda Xiong")
-	message.add_to("ashley@dsenyo.com", "Ashley Lestor")
+	#message.add_to("linda@dsenyo.com", "Linda Xiong")
+	#message.add_to("ashley@dsenyo.com", "Ashley Lestor")
 	#message.add_to("saintsjd@gmail.com", "Jon Saints")
 	# use the Web API to send your message
 	print customer['first_name'], customer['last_name']
