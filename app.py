@@ -2,7 +2,7 @@ import os
 from flask import Flask, request
 import sendgrid
 
-import logging
+import logging, sys
 app.logger.addHandler(logging.StreamHandler(sys.stdout))
 app.logger.setLevel(logging.DEBUG)
 
