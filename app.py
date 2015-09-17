@@ -2,6 +2,10 @@ import os
 from flask import Flask, request
 import sendgrid
 
+import logging
+app.logger.addHandler(logging.StreamHandler(sys.stdout))
+app.logger.setLevel(logging.DEBUG)
+
 app = Flask(__name__)
 SENDGRID_USERNAME = os.getenv('SENDGRID_USERNAME',False)
 SENDGRID_PASSWORD = os.getenv('SENDGRID_PASSWORD',False)
